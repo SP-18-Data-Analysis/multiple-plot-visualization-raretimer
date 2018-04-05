@@ -282,7 +282,7 @@ float mapLog(float value) {
       
       if (value > lowValue && value < topValue) {
          
-         newVal = map(log(value), log(lowValue), log(topValue), i,i+1);
+         newVal = map(value), lowValue, topValue, i,i+1);
         
       }  
    }
@@ -301,14 +301,13 @@ void drawXTickMarks() {
   stroke(224);
   strokeWeight(1);
   for (int row = 0; row < rowCount; row++) {
-//    if (triples[row] % yearInterval == 0) {
-      //float x = map(triples[row], tripleMin, tripleMax, plotX1, plotX2);
-      float x = map(row, 0, rowCount-1, plotX1, plotX2);
-      text(triples[row], x, plotY2 + 10);
+       if (years[row] % yearInterval == 0) {
+      float x =  map(years[row], yearMin, yearMax, plotX1, plotX2);
+      text(years[row], x, plotY2 + 10);
       
       // Long verticle line over each year interval
       line(x, plotY1, x, plotY2);
-//    }
+    }
   } 
   
 }
