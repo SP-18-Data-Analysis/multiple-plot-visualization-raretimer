@@ -1,4 +1,4 @@
-
+class catcheFileCores{
 // This function is required, this is called once, and used to setup your 
 // visualization environment
 int mode = 0;
@@ -334,4 +334,6 @@ void drawGraphLabels() {
   
   text("Loading Time (sec) ", labelX, (plotY1+plotY2)/2);
   popMatrix();
+}
+
 }
